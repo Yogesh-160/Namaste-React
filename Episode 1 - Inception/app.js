@@ -17,15 +17,32 @@ root.render(heading);*/
 const parent = React.createElement(
     "div",
     { id: "parent" },
-    React.createElement(
+    [React.createElement(
 
-        "div", { id: "child" },
-        React.createElement
+        "div", { id: "child0" },
+        [React.createElement
         ("h1", 
-        {style:{color:'green',fontSize:"45px", textAlign:"center"}}, 
+        {id:0,style:{color:'green', textAlign:"center"}}, 
         "I am H1 Tag"
-    )));
+    ),React.createElement
+    ("h2", 
+    {id:1,style:{color:'green', textAlign:"center"}}, 
+    "I am H2 Tag"
+)]),React.createElement(
+
+    "div", { id: "child1" },
+    [React.createElement
+    ("h1", 
+    {id:0,style:{color:'green', textAlign:"center"}}, 
+    "I am H1 Tag"
+),React.createElement
+("h2", 
+{id:1,style:{color:'green', textAlign:"center"}}, 
+"I am H2 Tag"
+)])]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(parent);
+
+// Note: **React element at the end of the day is Object => This react object becomes html that the browser understands**
